@@ -342,6 +342,7 @@
 }
 .home-button {
   color: rgb(18, 40, 33);
+  display: none;
   font-size: 18px;
   font-family: Lato;
   line-height: 27px;
