@@ -1,0 +1,16 @@
+.branding-branding {
+  gap: var(--dl-space-space-unit);
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+.branding-image {
+  width: auto;
+  height: var(--dl-size-size-xsmall);
+  object-fit: cover;
+}
+.branding-root-class-name {
+  height: var(--dl-size-size-xsmall);
+}
