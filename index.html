@@ -1,677 +1,547 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Open Deli</title>
-    <meta
-      name="description"
-      content="The food delivery alternative, empowering communities."
-    />
+
+<head>
+    <title>OpenCourier</title>
+    <meta name="description" content="The food delivery alternative, empowering communities." />
     <meta property="og:title" content="Open Deli" />
-    <meta
-      property="og:description"
-      content="The food delivery alternative, empowering communities."
-    />
+    <meta property="og:description" content="The food delivery alternative, empowering communities." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
 
     <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+        html {
+            line-height: 1.15;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
+
+        p,
+        li,
+        ul,
+        pre,
+        div,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        figure,
+        blockquote,
+        figcaption {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            background-color: transparent;
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        button,
+        select {
+            text-transform: none;
+        }
+
+        button,
+        [type="button"],
+        [type="reset"],
+        [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+        button::-moz-focus-inner,
+        [type="button"]::-moz-focus-inner,
+        [type="reset"]::-moz-focus-inner,
+        [type="submit"]::-moz-focus-inner {
+            border-style: none;
+            padding: 0;
+        }
+
+        button:-moz-focus,
+        [type="button"]:-moz-focus,
+        [type="reset"]:-moz-focus,
+        [type="submit"]:-moz-focus {
+            outline: 1px dotted ButtonText;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        input {
+            padding: 2px 4px;
+        }
+
+        img {
+            display: block;
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
     </style>
     <style data-tag="default-style-sheet">
-      html {
-        font-family: Lora;
-        font-size: 16px;
-      }
+        html {
+            font-family: Lora;
+            font-size: 16px;
+        }
 
-      body {
-        font-weight: 400;
-        font-style:normal;
-        text-decoration: none;
-        text-transform: none;
-        letter-spacing: normal;
-        line-height: 1.15;
-        color: var(--dl-color-paperblack-black);
-        background-color: var(--dl-color-paperblack-white);
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.15;
+            color: var(--dl-color-paperblack-black);
+            background-color: var(--dl-color-paperblack-white);
 
-      }
+        }
     </style>
-    <link
-      rel="shortcut icon"
-      href="public/playground_assets/size=favicon.png"
-      type="icon/png"
-      sizes="32x32"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400&amp;display=swap"
-      data-tag="font"
-    />
-    <!--This is the head section-->
-    <!-- <style> ... </style> -->
+    <link rel="shortcut icon" href="public/playground_assets/size=favicon.png" type="icon/png" sizes="32x32" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;display=swap"
+        data-tag="font" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400&amp;display=swap"
+        data-tag="font" />
     <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div>
-      <link href="./home.css" rel="stylesheet" />
-      <script
-        type="text/javascript"
-        src="https://unpkg.com/dangerous-html@0.1.12/dist/default/lib.umd.js"
-      ></script>
+    <link rel="stylesheet" href="./components/timeline.css" />
+</head>
 
-      <div class="home-container">
-        <div class="home-navbar">
-          <header data-thq="thq-navbar" class="home-navbar-interactive">
-            <div class="home-branding">
-              <img
-                alt="image"
-                src="public/playground_assets/open-deli-200h.png"
-                class="home-image"
-              />
+<body>
+    <div>
+        <link href="./home.css" rel="stylesheet" />
+        <script type="text/javascript" src="https://unpkg.com/dangerous-html@0.1.12/dist/default/lib.umd.js"></script>
+
+        <div class="home-container">
+            <div class="home-navbar">
+                <header data-thq="thq-navbar" class="home-navbar-interactive">
+                    <div class="home-desktop-branding">
+                        <img alt="image" src="public/playground_assets/open-courier-200h.svg" class="home-image" />
+                        <span class="home-text-open-deli">OpenCourier</span>
+                    </div>
+                    <div class="home-mobile-branding">
+                        <img alt="image" src="public/playground_assets/open-deli-200h.png" class="home-image" />
+                        <span class="home-text-open-deli-mobile">OpenCourier</span>
+                    </div>
+                    <div data-thq="thq-navbar-nav" data-role="Nav" class="home-desktop-menu">
+                        <nav class="home-links">
+                            <a href="#About" class="home-link button">
+                                <span>About</span>
+                            </a>
+                            <a href="#Protocol" class="home-link button">
+                                <span>
+                                    <span>Protocol</span>
+                                    <br />
+                                </span>
+                            </a>
+                            <a href="#SourceCode" class="home-link button">
+                                <span>
+                                    <span>Source Code</span>
+                                    <br />
+                                </span>
+                            </a>
+                            <a href="#Apps" class="home-link button">
+                                <span>
+                                    <span>Apps</span>
+                                    <br />
+                                </span>
+                            </a>
+                            <button class="home-button button">Menu</button>
+                        </nav>
+                    </div>
+                    <div data-thq="thq-burger-menu" class="home-burger-menu">
+                        <img alt="image" src="public/playground_assets/group%202084%5B1%5D.svg"
+                            class="home-hamburger" />
+                    </div>
+                    <div data-thq="thq-mobile-menu" class="home-mobile-menu">
+                        <div class="home-top">
+                            <div class="home-branding1">
+                                <img alt="image" src="public/playground_assets/open-courier-200h.svg"
+                                    class="home-image01" />
+                                <svg viewBox="0 0 1024 1024" class="home-icon">
+                                    <path d="M128 128h768v768h-768z"></path>
+                                </svg>
+                                <span class="home-text07">Remarkable</span>
+                            </div>
+                            <div data-thq="thq-close-menu" class="home-menu-close">
+                                <svg viewBox="0 0 1024 1024" class="home-icon2">
+                                    <path
+                                        d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                        <nav class="home-links1">
+                            <a href="#About" class="home-link button">
+                                <span>About</span>
+                            </a>
+                            <a href="#Protocol" class="home-link button">
+                                <span>Protocol</span>
+                            </a>
+                            <a href="#SourceCode" class="home-link button">
+                                <span>SourceCode</span>
+                            </a>
+                            <a href="#Apps" class="home-link button">
+                                <span>Apps</span>
+                            </a>
+                        </nav>
+                    </div>
+                </header>
             </div>
-            <div
-              data-thq="thq-navbar-nav"
-              data-role="Nav"
-              class="home-desktop-menu"
-            >
-              <nav class="home-links">
-                <a href="#Restaurant" class="home-link button">
-                  <span>For Restaurants</span>
-                </a>
-                <a href="#Driver" class="home-link1 button">
-                  <span>
-                    <span>For Couriers</span>
+
+            <header class="home-hero">
+                <div class="home-content">
+                    <h1 class="home-title">
+                        Enabling Decentralized, Community-Owned Delivery Services
+                    </h1>
+                    <span class="home-description">
+                        Can you imagine a future where food delivery isn’t controlled by single profit-driven platforms,
+                        but powered
+                        by an ecosystem composed of community-owned platforms? In this ecosystem, workers gain agency,
+                        data become
+                        auditable and tools built by one can be shared to everyone within the ecosystem.<br> <br>
+
+                        This is not just a shift in technology—it’s a transformation in who gets to build and benefit
+                        from the
+                        future of work.
+
+                    </span>
+                    <img alt="image" src="public/playground_assets/line-300w.png" class="home-image02" />
+                </div>
+                <div class="home-image03">
+                    <!-- <video src="public/playground_assets/open-deli-consumer.mp4" loop="" muted="" preload="auto"
+                        autoplay="" playsinline="" class="home-video"></video> -->
+                    <img alt="image" src="public/playground_assets/open-courier-rmbg.png" width="100%" />
+                </div>
+            </header>
+
+            <section class="home-mission">
+                <h2 class="home-text10">
+                    <span>
+                        Be part of the decentralized revolution. Join the growing number
+                        of communities.
+                    </span>
                     <br />
-                  </span>
+                </h2>
+                <a href="#contactus" class="home-link6 button">
+                    <span class="home-text13">Contact Us</span>
                 </a>
-                <a href="#Customers" class="home-link2 button">
-                  <span>
-                    <span>For Consumers</span>
-                    <br />
-                  </span>
-                </a>
-                <button class="home-button button">Menu</button>
-              </nav>
-            </div>
-            <div data-thq="thq-burger-menu" class="home-burger-menu">
-              <img
-                alt="image"
-                src="public/playground_assets/group%202084%5B1%5D.svg"
-                class="home-hamburger"
-              />
-            </div>
-            <div data-thq="thq-mobile-menu" class="home-mobile-menu">
-              <div class="home-top">
-                <div class="home-branding1">
-                  <img
-                    alt="image"
-                    src="public/playground_assets/open-deli-200h.png"
-                    class="home-image01"
-                  />
-                  <svg viewBox="0 0 1024 1024" class="home-icon">
-                    <path d="M128 128h768v768h-768z"></path>
-                  </svg>
-                  <span class="home-text07">Remarkable</span>
-                </div>
-                <div data-thq="thq-close-menu" class="home-menu-close">
-                  <svg viewBox="0 0 1024 1024" class="home-icon2">
-                    <path
-                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
-                    ></path>
-                  </svg>
-                </div>
-              </div>
-              <nav class="home-links1">
-                <a href="#Restaurant" class="home-link3 button">
-                  <span>For Restaurants</span>
-                </a>
-                <a href="#Driver" class="home-link4 button">
-                  <span>For Couriers</span>
-                </a>
-                <a href="#Customers" class="home-link5 button">For Consumers</a>
-              </nav>
-            </div>
-          </header>
-        </div>
-        <header class="home-hero">
-          <div class="home-content">
-            <h1 class="home-title">
-              The food delivery alternative, empowering communities.
-            </h1>
-            <span class="home-description">
-              OpenDeli is the decentralized, open-source food delivery
-              alternative that empowers communities.
-            </span>
-            <img
-              alt="image"
-              src="public/playground_assets/line-300w.png"
-              class="home-image02"
-            />
-          </div>
-          <div class="home-image03">
-            <video
-              src="public/playground_assets/open-deli-consumer.mp4"
-              loop=""
-              muted=""
-              preload="auto"
-              autoplay=""
-              playsinline=""
-              class="home-video"
-            ></video>
-            <img
-              alt="image"
-              src="https://play.teleporthq.io/static/svg/placeholders/no-image.svg"
-              class="home-image04"
-            />
-            <img
-              alt="image"
-              src="public/playground_assets/food%20delivery_takeout-500h.png"
-              class="home-image05"
-            />
-          </div>
-        </header>
-        <section class="home-mission">
-          <h2 class="home-text10">
-            <span>
-              Be part of the decentralized revolution. Join the growing number
-              of communities demanding more.
-            </span>
-            <br />
-          </h2>
-          <a href="#mission" class="home-link6 button">
-            <span class="home-text13">Learn about our mission</span>
-          </a>
-        </section>
-        <section class="home-improve">
-          <div class="home-heading">
-            <h2 class="home-text14">
-              <span>More choice. More flexibility. More freedom.</span>
-              <br />
-            </h2>
-            <p class="home-text17">
-              <span>
-                Our system provides a fair and open alternative that’s
-                federated. Local businesses can break away from unfair
-                treatment, excessive fees and have complete control over who
-                they work with. With OpenDeli, local businesses set up shop on
-                their terms in their best interests.
-              </span>
-              <br />
-            </p>
-          </div>
-        </section>
-        <section class="home-services">
-          <h2 class="home-text20">Contribute your way</h2>
-          <div class="home-cards">
-            <div class="home-row">
-              <div id="Driver" class="home-container01">
-                <div class="card-card card card-root-class-name">
-                  <img
-                    alt="image"
-                    src="public/playground_assets/courier.svg"
-                    class="card-image"
-                  />
-                  <div class="card-header">
-                    <img
-                      alt="image"
-                      src="public/playground_assets/carprofile.svg"
-                      class="card-icon"
-                    />
-                    <h3 class="card-heading"><span>Drivers</span></h3>
-                  </div>
-                  <p class="card-text">
-                    <span>
-                      OpenDeli gives drivers more freedom. Our decentralized,
-                      open-source software enables local businesses to cooperate
-                      in their best interests. What's more, our powerful system
-                      enables groups of drivers to become co-owners with
-                      companies, cooperatives and non-profit organizations.
+            </section>
+
+            <section class="home-services" id="About">
+                <span class="home-text20">About</span>
+                <div>
+                    <span class="home-description">
+                        Open Courier is building a new kind of food delivery ecosystem to counter the key problems
+                        nowadays:
+                        unfair power dynamics between the platform and the workers, lack of transparency with algorithms
+                        that make decisions behind closed doors and infrastructural designs that don’t reflect workers'
+                        values or community needs . We envision a decentralized ecosystem of community-owned food
+                        delivery
+                        platforms that: <br>
                     </span>
-                  </p>
-                  <p class="card-text1">
-                    <span>
-                      With OpenDeli, drivers can advocate for their rights at
-                      the local level. Local governments can also use our
-                      powerful software. Using OpenDeli, they can provide
-                      drivers with free services and ensure they receive fair
-                      pay.
+                    <ul class="home-list">
+                        <li>Let couriers choose where to work based on their preferences and values.</li>
+                        <li>Increase interoperability, so anyone can audit the ecosystem.</li>
+                        <li>Support open-source developments, so tools made by one can benefit everyone in the
+                            ecosystem.
+                        </li>
+                    </ul>
+                    <hr>
+                </div>
+
+            </section>
+
+            <!-- <section class="home-services" id="Protocol">
+                <span class="home-text20">Protocol</span>
+                <div class="home-description">
+                    <span>The Open Courier protocol defines three core layers of communication within the ecosystem:
+                        between the mobile app and instances, between instances and service requesters, and the
+                        governance of the instance registry.</span>
+                    <br>
+                    <span class="home-protocol-description">
+                        Read more <a class="paper-link" href="https://dl.acm.org/doi/abs/10.1145/3544548.3581517"
+                            target="_blank">
+                            here</a>
                     </span>
-                  </p>
+                    <hr>
                 </div>
-              </div>
-              <div id="Restaurant" class="home-container02">
-                <div class="card-card card card-root-class-name1">
-                  <img
-                    alt="image"
-                    src="public/playground_assets/restaurant.svg"
-                    class="card-image"
-                  />
-                  <div class="card-header">
-                    <img
-                      alt="image"
-                      src="public/playground_assets/hamburger.svg"
-                      class="card-icon"
-                    />
-                    <h3 class="card-heading"><span>Restaurants</span></h3>
-                  </div>
-                  <p class="card-text">
-                    <span>
-                      OpenDeli’s system gives restaurants more control. With
-                      OpenDeli, local restaurants can create their own company.
-                      This lets local eateries work together and act in their
-                      best interests.
-                    </span>
-                  </p>
-                  <p class="card-text1">
-                    <span>
-                      Our software gives power back to restaurants. They can
-                      break away from the major food delivery services that only
-                      want to extract. OpenDeli enables restaurants to work in a
-                      way that benefits them best. We also enable restaurants to
-                      create shared ownership of delivery services. This way,
-                      restaurants have more say at the table and can work
-                      together for each other’s best interests.
-                    </span>
-                  </p>
-                </div>
-              </div>
-              <div id="Customers" class="home-container03">
-                <div class="card-card card card-root-class-name2">
-                  <img
-                    alt="image"
-                    src="public/playground_assets/consumer.svg"
-                    class="card-image"
-                  />
-                  <div class="card-header">
-                    <img
-                      alt="image"
-                      src="public/playground_assets/usersfour.svg"
-                      class="card-icon"
-                    />
-                    <h3 class="card-heading"><span>Consumers</span></h3>
-                  </div>
-                  <p class="card-text">
-                    <span>
-                      Our software supports a decentralized future. With
-                      OpenDeli, customers support their communities with every
-                      order.
-                    </span>
-                  </p>
-                  <p class="card-text1">
-                    <span>
-                      OpenDeli’s software empowers local businesses to create
-                      value-driven choices for their customers. Whatever their
-                      food preferences, users can align their values with their
-                      orders. By using OpenDeli, people support their
-                      communities every time they buy.
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="home-partners">
-          <div class="home-content1">
-            <h2 class="home-text21">Create a community</h2>
-            <p class="home-text22">
-              Unite foodies in your area - start your own community on Open Deli
-              and savor the local flavors together
-            </p>
-          </div>
-          <div class="home-partners-desktop">
-            <div class="home-column">
-              <div class="home-container04">
-                <div class="partner-container">
-                  <img
-                    alt="image"
-                    src="public/playground_assets/takeout-box_1f961-200h.png"
-                    class="partner-image"
-                  />
-                </div>
-                <span class="home-text23">ORG</span>
-              </div>
-            </div>
-            <div class="home-column01">
-              <div class="home-container05">
-                <div class="partner-container">
-                  <img
-                    alt="image"
-                    src="public/playground_assets/carrot_1f955-200h.png"
-                    class="partner-image"
-                  />
-                </div>
-                <span class="home-text24">ORG</span>
-              </div>
-              <div class="home-container06">
-                <div class="partner-container">
-                  <img
-                    alt="image"
-                    src="public/playground_assets/flag-spain_1f1ea-1f1f8-200h.png"
-                    class="partner-image"
-                  />
-                </div>
-                <span class="home-text25">ORG</span>
-              </div>
-            </div>
-            <div class="home-column02">
-              <div class="home-container07">
-                <div class="partner-container">
-                  <img
-                    alt="image"
-                    src="public/playground_assets/bacon_1f953-200h.png"
-                    class="partner-image"
-                  />
-                </div>
-                <span class="home-text26">ORG</span>
-              </div>
-              <div class="home-container08">
-                <div class="partner-container">
-                  <img
-                    alt="image"
-                    src="public/playground_assets/red-apple_1f34e1-200h.png"
-                    class="partner-image"
-                  />
-                </div>
-                <span class="home-text27">ORG</span>
-              </div>
-              <div class="home-container09">
-                <div class="partner-container">
-                  <img
-                    alt="image"
-                    src="public/playground_assets/unicorn_1f984-200h.png"
-                    class="partner-image"
-                  />
-                </div>
-                <span class="home-text28">ORG</span>
-              </div>
-            </div>
-          </div>
-          <div class="home-partners-mobile">
-            <div class="home-row1">
-              <div class="partner-container home-partner06">
-                <img
-                  alt="image"
-                  src="public/playground_assets/bacon_1f953-200h.png"
-                  class="partner-image"
-                />
-              </div>
-              <div class="partner-container home-partner07">
-                <img
-                  alt="image"
-                  src="public/playground_assets/carrot_1f955-200h.png"
-                  class="partner-image"
-                />
-              </div>
-              <div class="partner-container home-partner08">
-                <img
-                  alt="image"
-                  src="public/playground_assets/flag-united-states_1f1fa-1f1f8-200h.png"
-                  class="partner-image"
-                />
-              </div>
-            </div>
-            <div class="home-column03"></div>
-            <div class="home-column04">
-              <div class="partner-container home-partner09">
-                <img
-                  alt="image"
-                  src="public/playground_assets/steaming-bowl_1f35c-200h.png"
-                  class="partner-image"
-                />
-              </div>
-              <div class="partner-container home-partner10">
-                <img
-                  alt="image"
-                  src="public/playground_assets/croissant_1f950-200h.png"
-                  class="partner-image"
-                />
-              </div>
-            </div>
-            <div class="home-column05">
-              <div class="partner-container home-partner11">
-                <img
-                  alt="image"
-                  src="public/playground_assets/takeout-box_1f961-200h.png"
-                  class="partner-image"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="mission" class="home-banner">
-          <div class="home-container10">
-            <div class="home-header">
-              <h2 class="home-title1">Mission</h2>
-              <p class="home-description1">
-                <span>
-                  Introducing the future of food delivery: our open source and
-                  federated app.
+            </section> -->
+
+            <section class="home-services" id="Protocol">
+                <span class="home-text20">
+                    Protocol
                 </span>
-                <br />
-                <br />
-                <span>
-                  Choose from a wide range of local restaurants and food
-                  providers while supporting small businesses and reducing
-                  carbon emissions.
+                <div>
+                    <span class="home-description">
+                        The Open Courier protocol defines three core layers of communication within the ecosystem:
+                        between the mobile app and instances, between instances and service requesters, and the
+                        governance of the instance registry.
+                        <br>
+                        <a href="https://dl.acm.org/doi/abs/10.1145/3637369" target="_blank" class="paper-link">
+                            Read more about the protocol here 📄
+                        </a>
+                    </span>
+                    <hr>
+            </section>
+
+            <section class="home-services" id="SourceCode">
+                <span class="home-text20">
+                    Source Code
                 </span>
-                <br />
-                <br />
-                <span>
-                  Take control of your data and privacy with our decentralized
-                  platform.
-                </span>
-              </p>
-            </div>
-          </div>
-        </section>
-        <section class="home-mission1"></section>
-        <section class="home-galleries">
-          <div class="home-gallery-desktop">
-            <div class="home-column06">
-              <img
-                alt="image"
-                src="public/playground_assets/pexels-tim-douglas-6205761-1300w.jpg"
-                class="home-image18"
-              />
-            </div>
-            <div class="home-column07">
-              <div class="home-row2">
-                <div class="home-yellow">
-                  <img
-                    alt="image"
-                    src="public/playground_assets/opendeli-motocycle-yellow-bg-1300w.png"
-                    class="home-image19"
-                  />
+                <div>
+                    <span class="home-description">
+                        We have a reference implementation of the protocol in a multiplatform <a class="paper-link"
+                            href="https://github.com/Princeton-HCI/opendeli-courier-mobile/"> mobile
+                            app</a> with
+                        <a class="paper-link" href="https://github.com/Princeton-HCI/open-deli-courier-backend"> backend
+                            endpoints </a> and an <a class="paper-link"
+                            href="https://github.com/Princeton-HCI/opencourier-adminweb">admin dashboard</a> for
+                        instance-level management.
+                        This enables organizations within the ecosystem to customize how the system operates—for
+                        example, instance operators can tailor delivery matching or compensation models to better
+                        reflect community needs.
+                        We are committed to continue the development of this open-source codebase and invite others to
+                        contribute. Areas for collaboration include:
+                        <br>
+                    </span>
+                    <ul class="home-list">
+                        <li>Enhancing the granularity and flexibility of the worker preference-input endpoints.</li>
+                        <li>Expanding features that support community information exchange via the community-notes.</li>
+                        <li>Building tools for analyzing and auditing at both the instance and ecosystem levels.</li>
+                        <li>Exploring risks and refining governance models for the instance registry.</li>
+                    </ul>
+                    <div class="github-card-container">
+                        <a href="https://github.com/Princeton-HCI/opendeli-courier-mobile/" target="_blank"
+                            class="github-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                                alt="GitHub" />
+                            <div class="card-text">
+                                <strong>Multiplatform Mobile App</strong>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/Princeton-HCI/open-deli-courier-backend" target="_blank"
+                            class="github-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                                alt="GitHub" />
+                            <div class="card-text">
+                                <strong>Backend Endpoints</strong>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/Princeton-HCI/opencourier-adminweb" target="_blank"
+                            class="github-card">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                                alt="GitHub" />
+                            <div class="card-text">
+                                <strong>Admin Dashboard</strong>
+                            </div>
+                        </a>
+                    </div>
+                    <hr>
+            </section>
+            <section class="home-services" id="App">
+                <div class="app-flex-container">
+                    <!-- Left Side: Text + Buttons -->
+                    <div class="app-text-buttons">
+                        <span class="home-app-title home-text20">Try Our App!</span>
+                        <span class="home-app-description home-description">
+                            You can try the apps built from our open-source codebase:
+                        </span>
+                        <div class="store-buttons">
+                            <a href="https://apps.apple.com/app/idXXXXXXXXX" target="_blank" class="store-badge">
+                                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                                    alt="Download on the App Store" />
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=your.package.name" target="_blank"
+                                class="store-badge">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                                    alt="Get it on Google Play" />
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Video -->
+                    <div class="app-video-wrapper">
+                        <video src="public/playground_assets/open-deli-consumer.mp4" loop muted autoplay playsinline
+                            class="app-video"></video>
+                    </div>
                 </div>
-                <img
-                  alt="image"
-                  src="public/playground_assets/pexels-norma-mortenson-4393667-1300w.jpg"
-                  class="home-image20"
-                />
-              </div>
-              <div class="home-row3">
-                <img
-                  alt="image"
-                  src="public/playground_assets/pexels-mikhail-nilov-6740517-500w.jpg"
-                  class="home-image21"
-                />
-                <img
-                  alt="image"
-                  src="public/playground_assets/opendeli-menu1-1300w.png"
-                  class="home-image22"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="home-gallery-mobile">
-            <div class="home-column08">
-              <img
-                alt="image"
-                src="public/playground_assets/pexels-tim-douglas-6205761-1300w.jpg"
-                class="home-image23"
-              />
-              <img
-                alt="image"
-                src="public/playground_assets/pexels-norma-mortenson-4393667-1300w.jpg"
-                class="home-image24"
-              />
-            </div>
-            <div class="home-column09">
-              <div class="home-yellow1">
-                <img
-                  alt="image"
-                  src="public/playground_assets/opendeli-motocycle-yellow-bg-1300w.png"
-                  class="home-image25"
-                />
-              </div>
-              <img
-                alt="image"
-                src="public/playground_assets/pexels-mikhail-nilov-6740517-500w.jpg"
-                class="home-image26"
-              />
-              <div class="home-row4">
-                <img
-                  alt="image"
-                  src="public/playground_assets/opendeli-menu1-1300w.png"
-                  class="home-image27"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="home-newsletter">
-          <div class="home-header1">
-            <h2 class="home-text36">Subscribe to our newsletter</h2>
-            <p class="home-text37">
-              Sign up for our newsletter to get the latest news!
-            </p>
-          </div>
-          <div class="home-content2">
-            <div class="home-email">
-              <input
-                type="text"
-                placeholder="Enter your email"
-                class="home-textinput input"
-              />
-              <div class="home-submit">
-                <img
-                  alt="image"
-                  src="public/playground_assets/frame.svg"
-                  class="home-image28"
-                />
-              </div>
-            </div>
-            <div class="home-notice">
-              <span class="home-notice1">
-                By subscribing, you accept to receive communications from
-                Open-deli to your email address.&nbsp;
-              </span>
-            </div>
-          </div>
-        </section>
-        <footer class="footer-footer">
-          <div class="footer-information">
-            <div class="footer-content">
-              <div class="footer-contact-list">
-                <div class="footer-contact">
-                  <img
-                    alt="image"
-                    src="public/playground_assets/githublogo1.svg"
-                    class="footer-image"
-                  />
-                  <span class="footer-text"><span>Give us a star</span></span>
+            </section>
+
+
+            <section id="Team" class="home-services">
+                <h2 class="home-text20">Organizations</h2>
+                <div class="home-team">
+                    <div class="team-card">
+                        <img alt="image"
+                            src="public/playground_assets/princeton-university-logo_freelogovectors.net_-200h.png"
+                            class="footer-image2" />
+                    </div>
+                    <div class="team-card">
+                        <img alt="image" src="public/playground_assets/hci-princeton-logomark-200h.webp"
+                            class="footer-image3" />
+                    </div>
+                    <div class="team-card">
+                        <img alt="image" src="public/playground_assets/citp.webp" class="footer-image4" />
+                    </div>
+                    <div class="team-card">
+                        <div class="decenter-logo">
+                            <img alt="image" src="public/playground_assets/decenter.jpg" class="footer-image4" />
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-contact1">
-                  <img
-                    alt="image"
-                    src="public/playground_assets/mastodon.svg"
-                    class="footer-image1"
-                  />
-                  <span class="footer-text01">
-                    <span>Follow us on Mastodon</span>
-                  </span>
+            </section>
+            <section class="home-services" id="contactus">
+                <h2 class="home-text20">Contact Us</h2>
+                <!-- <p class="home-text37">
+                        Sign up for our newsletter to get the latest news!
+                    </p> -->
+                <div class="home-content2">
+                    <!-- <div class="home-email">
+                        <input type="text" placeholder="Enter your email" class="home-textinput input" />
+                        <div class="home-submit">
+                            <img alt="image" src="public/playground_assets/frame.svg" class="home-image28" />
+                        </div>
+                    </div> -->
+                    <!-- <div class="home-notice">
+                        <span class="home-notice1">
+                            By subscribing, you agree to receive communications from
+                            Open Deli to your email address.&nbsp;
+                        </span>
+                    </div> -->
+                    <form action="https://formspree.io/f/mkgjanlq" method="POST">
+                        <div class="home-email">
+                            <label>
+                                <input name="name" placeholder="Name" class="home-textinput input"></input>
+                            </label>
+                        </div>
+                        <br>
+                        <div class="home-email">
+                            <label>
+                                <input name="role" placeholder="Role and affliation"
+                                    class="home-textinput input"></input>
+                            </label>
+                        </div>
+                        <br>
+                        <div class="home-email">
+                            <label>
+                                <input type="email" name="email" placeholder="Email" class="home-textinput input">
+                            </label>
+                        </div>
+                        <br>
+                        <div class="home-email">
+                            <label>
+                                <input name="message" placeholder="Message" class="home-textinput input"></input>
+                            </label>
+                        </div>
+
+                        <br>
+                        <div class="button-wrapper">
+                            <button type="submit" class="home-submit"> <span>Submit</span>
+                                <!-- <img src="public/playground_assets/frame.svg" alt="Send" class="home-image28" /> -->
+                            </button>
+                        </div>
+                    </form>
                 </div>
-              </div>
-              <div class="footer-contact-list1">
-                <div class="footer-contact2">
-                  <img
-                    alt="image"
-                    src="public/playground_assets/princeton-university-logo_freelogovectors.net_-200h.png"
-                    class="footer-image2"
-                  />
-                </div>
-                <div class="footer-contact3">
-                  <img
-                    alt="image"
-                    src="public/playground_assets/hci-princeton-logomark-200h.webp"
-                    class="footer-image3"
-                  />
-                </div>
-                <div class="footer-contact4">
-                  <img
-                    alt="image"
-                    src="public/playground_assets/carbon-neutral.svg"
-                    class="footer-image4"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="footer-container">
-              <div class="branding-branding branding-root-class-name">
-                <img
-                  alt="image"
-                  src="public/playground_assets/open-deli-200h.png"
-                  loading="lazy"
-                  class="branding-image"
-                />
-              </div>
-              <span class="footer-copyright">
-                <span>Open Deli Foundation.</span>
-              </span>
-            </div>
+            </section>
+            <footer class="footer-footer">
+                <!-- <div class="footer-information">
+                    <div class="footer-content">
+                        <div class="footer-contact-list1">
+                            <div class="footer-contact2">
+                                <img alt="image"
+                                    src="public/playground_assets/princeton-university-logo_freelogovectors.net_-200h.png"
+                                    class="footer-image2" />
+                            </div>
+                            <div class="footer-contact3">
+                                <img alt="image" src="public/playground_assets/hci-princeton-logomark-200h.webp"
+                                    class="footer-image3" />
+                            </div>
+                            <div class="footer-contact4">
+                                <img alt="image" src="public/playground_assets/carbon-neutral.svg"
+                                    class="footer-image4" />
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="footer-links">
+          <div class="footer-column">
+            <span class="link"><span>About</span></span>
+            <span class="link"><span>Contribute</span></span>
+            <span class="link"><span>Releases</span></span>
+            <span class="link"><span>Changelog</span></span>
+            <span class="link"><span>Mastodon</span></span>
+            <span class="link"><span>Contact</span></span>
           </div>
-          <div class="footer-links">
-            <div class="footer-column">
-              <span class="link"><span>About</span></span>
-              <span class="link"><span>Contribute</span></span>
-              <span class="link"><span>Releases</span></span>
-              <span class="link"><span>Changelog</span></span>
-              <span class="link"><span>Mastodon</span></span>
-              <span class="link"><span>Contact</span></span>
-            </div>
-            <div class="footer-column1">
-              <span class="link"><span>Linkedin</span></span>
-              <span class="link"><span>Instagram</span></span>
-              <span class="link"><span>Twitter</span></span>
-              <span class="link"><span>Facebook</span></span>
-            </div>
+          <div class="footer-column1">
+            <span class="link"><span>Linkedin</span></span>
+            <span class="link"><span>Instagram</span></span>
+            <span class="link"><span>Twitter</span></span>
+            <span class="link"><span>Facebook</span></span>
           </div>
-        </footer>
-        <div>
-          <dangerous-html
-            html="<style>
+        </div> -->
+            </footer>
+            <div>
+                <dangerous-html html="<style>
     .partner-container:hover .partner-image{
         filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(75deg) brightness(101%) contrast(102%);
     }
-</style>"
-          ></dangerous-html>
+</style>"></dangerous-html>
+            </div>
         </div>
-      </div>
     </div>
-    <script
-      data-section-id="navbar"
-      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
-    ></script>
-  </body>
+    <button id="backToTopBtn" title="Go to top">↑</button>
+    <script>
+        // Show button after scrolling down 300px
+        window.onscroll = function () {
+            const btn = document.getElementById("backToTopBtn");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+
+        // Scroll smoothly to top on click
+        document.getElementById("backToTopBtn").onclick = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        };
+    </script>
+
+    <script data-section-id="navbar" src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+
+
+</body>
+
 </html>
